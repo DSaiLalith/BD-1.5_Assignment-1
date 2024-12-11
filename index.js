@@ -16,11 +16,10 @@ let loyaltyRate = 2; // 2 points per $1
 // Endpoint 1: Calculate the total price of items in the cart
 
 app.get('/cart-total', (req, res) => {
-  let item1Price = parseFloat(req.query.item1Price);
-  let item2Price = parseFloat(req.query.item2Price);
-  let item3Price = parseFloat(req.query.item3Price);
-  let cartTotal = item1Price + item2Price + item3Price;
-  res.send(cartTotal.toString());
+  let newItemPrice = parseFloat(req.query.newItemPrice);
+  let cartTotal = parseFloat(req.query.cartTotal);
+  let result = newItemPrice + cartTotal;
+  res.send(result.toString());
 });
 
 // Endpoint 2 : Apply a discount based on membership status
